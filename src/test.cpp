@@ -1,3 +1,8 @@
+#include <iostream>
+#include <sstream>
+#include <cstring>
+
+
 // Helper functions for testing
 template <typename T>
 bool checkTest(int testNum, int& correct, T whatItShouldBe, T whatItIs) {
