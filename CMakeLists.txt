@@ -1,28 +1,26 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
-project( SimpleCalculator )
+project( <PROJECT NAME>)
 
 set( CMAKE_CXX_STANDARD 17 )
 set( CMAKE_CXX_EXTENSIONS OFF )
 set( CMAKE_CXX_STANDARD_REQUIRED ON )
 
-set( APP_EXECUTABLE SimpleCalculatorTest )
+set( APP_EXECUTABLE <PROJECT NAME> )
 
 include_directories( inc )
 
-ADD_EXECUTABLE(SimpleCalculator "src/SimpleCalculator.cpp")
+ADD_EXECUTABLE(SimpleCalculator "src/...cpp")
 
-ADD_EXECUTABLE( ${APP_EXECUTABLE} "src/SimpleCalculatorTest.cpp"  "src/SimpleCalculator.cpp")
+ADD_EXECUTABLE( ${APP_EXECUTABLE} "src/TEST...cpp"  "src/...cpp")
 
-target_compile_definitions(SimpleCalculatorTest PRIVATE TESTING)
+target_compile_definitions(<PROJECT NAME> PRIVATE TESTING)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 
 set_property( DIRECTORY PROPERTY VS_STARTUP_PROJECT ${APP_EXECUTABLE} )
 
 include (CTest)
-add_test(${APP_EXECUTABLE}_testAreaOfCircle ${APP_EXECUTABLE} 1)
-add_test(${APP_EXECUTABLE}_testAddFractions ${APP_EXECUTABLE} 2)
-add_test(${APP_EXECUTABLE}_testQuadraticFormula ${APP_EXECUTABLE} 3)
+add_test(${APP_EXECUTABLE}_test ${APP_EXECUTABLE} 1)
 
 find_program(VALGRIND "valgrind")
 if(VALGRIND)
