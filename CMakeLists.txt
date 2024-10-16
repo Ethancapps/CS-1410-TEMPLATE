@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
-project( <PROJECT NAME>)
+project(main)
 
 set( CMAKE_CXX_STANDARD 17 )
 set( CMAKE_CXX_EXTENSIONS OFF )
@@ -9,11 +9,7 @@ set( APP_EXECUTABLE <PROJECT NAME> )
 
 include_directories( inc )
 
-ADD_EXECUTABLE(SimpleCalculator "src/...cpp")
-
-ADD_EXECUTABLE( ${APP_EXECUTABLE} "src/TEST...cpp"  "src/...cpp")
-
-target_compile_definitions(<PROJECT NAME> PRIVATE TESTING)
+ADD_EXECUTABLE(main "src/main.cpp")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 
